@@ -1,0 +1,136 @@
+﻿.geral_login {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.container_login {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: var(--bg-neutro-1);
+    width: 80vw;
+    height: 70vh;
+    border-radius: 5px;
+    gap: 1rem;
+    margin-top: 10vh;
+}
+
+.container-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.login-conta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-conta > p {
+    color: var(--color-font-secundario);
+}
+
+.login-conta > a {
+    border: none;
+    background-color: var(--bg-btn-principal);
+    color: var(--bg-neutro-1);
+    padding: var(--btn-padding);
+    border-radius: var(--btn-radius);
+    font-weight: var(--btn-weight);
+}
+
+.login-conta > a:hover {
+    background-color: var(--bg-btn-principal-hover);
+    transition: .2s;
+}
+
+.login-conta > h1 {
+    color: var(--bg-btn-principal);
+}
+
+.login-conta,
+.container-input {
+    box-shadow: 0 2px 5px var(--sombra-box-principal);
+    border-radius: 10px;
+    border: solid 1px var(--border-principal);
+}
+
+.form-input {
+    width: 80%;
+}
+
+.box-input {
+    margin-bottom: 15px;
+}
+
+.container-input > h1 {
+    color: var(--bg-btn-principal);
+}
+
+.container-input > p {
+    color: var(--color-font-secundario);
+}
+
+.input-criar-conta::placeholder,
+.input-criar-senha::placeholder {
+    color: var(--color-text-input);
+}
+
+.input-criar-conta {
+    width: 100%;
+    border: solid 1px #D9D7D7;
+    height: 6vh;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+.input-criar-conta-senha {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100%;
+    border: solid 1px var(--border-principal);
+    height: 6vh;
+    border-radius: 3px;
+}
+
+.input-criar-senha {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding-left: 10px;
+}
+
+.show-hide-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-hide-password svg {
+    position: relative;
+    left: 25%;
+    top: 25%;
+}
+
+.eyes-senha img {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.box-cadastrar > input {
+    border: none;
+    background-color: var(--bg-btn-principal);
+    color: var(--bg-neutro-1);
+    padding: var(--btn-padding);
+    border-radius: var(--btn-radius);
+    font-weight: var(--btn-weight);
+}
+
+.box-cadastrar > input:hover {
+    background-color: var(--bg-btn-principal-hover);
+    transition: .2s;
+}

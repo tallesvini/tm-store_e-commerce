@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TM Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Ecommerce_1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/rastreio.css" asp-append-version="true" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <div class="dados-api">
+        <p class="dado-1"></p>
+        <p class="dado-2"></p>
+        <p class="dado-3"></p>
+        <p class="dado-4"></p>
+    </div>
+    <div class="input-box-rastreio">
+        <div class="options-rastreio">
+            <h1>Rastreio da sua encomenda</h1>
+            <h5>Insira aqui o código de rastreio para localizarmos.</h5>
+            <input id="input-enter" type="text" placeholder="AA1234567BR" />
+        </div>
+
+    </div>
+
+</body>
+<script src="~/js/rastreio_api.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</html>

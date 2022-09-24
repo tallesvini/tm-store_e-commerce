@@ -1,0 +1,59 @@
+﻿.dados-api {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box-rastreio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    padding: 70px;
+    text-align: center;
+}
+
+.options-rastreio {
+    margin-bottom: 30px;
+}
+
+.options-rastreio > h1 {
+    color: var(--bg-btn-principal);
+}
+
+.options-rastreio > h5 {
+    color: var(--color-font-secundario);
+}
+
+.container-rastreio {
+    border: solid 1px #D9D7D7;
+    width: 600px;
+    margin-bottom: 25px;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-rastreio > h1 {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.container-rastreio svg {
+    fill: #F25C05 !important;
+}
+
+#input-enter {
+    width: 100%;
+    height: 6vh;
+    padding-left: 10px;
+    border: solid 1px #D9D7D7;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+}
+
+.svg-aviao {
+    fill: #078C03;
+}

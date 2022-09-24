@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TM Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Ecommerce_1.styles.css" asp-append-version="true" />
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container-geral">
+                    <a class="logo-principal" asp-area="" asp-controller="Home" asp-action="Index">TM Store</a>
+                     <div class="box-search-principal">
+                         <input type="text" class="input-search-principal" placeholder="O que deseja procurar?" />
+                         <button class="btn-lupa">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 30 30" width="30px" height="30px"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/></svg>
+                     </button>
+                </div>
+       
+                <div>
+                    <ul class="navbar-nav nav-options">
+                        <li class="nav-item">
+                            <p class="nav-1">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" height="25" width="25" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><g><circle cx="256" cy="378.5" r="25"></circle><path d="M256,0C114.516,0,0,114.497,0,256c0,141.484,114.497,256,256,256c141.484,0,256-114.497,256-256 C512,114.516,397.503,0,256,0z M256,472c-119.377,0-216-96.607-216-216c0-119.377,96.607-216,216-216 c119.377,0,216,96.607,216,216C472,375.377,375.393,472,256,472z"></path><path d="M256,128.5c-44.112,0-80,35.888-80,80c0,11.046,8.954,20,20,20s20-8.954,20-20c0-22.056,17.944-40,40-40 c22.056,0,40,17.944,40,40c0,22.056-17.944,40-40,40c-11.046,0-20,8.954-20,20v50c0,11.046,8.954,20,20,20 c11.046,0,20-8.954,20-20v-32.531c34.466-8.903,60-40.26,60-77.469C336,164.388,300.112,128.5,256,128.5z"></path></g></g></g></svg>
+                                Atendimento
+                            </p>
+                            <div class="show show-1 box-nav-bar" style="display: none;">
+                                <div class="container-suporte">
+                                    <div class="container-suporte">
+                                        <div class="telefone-suporte">
+                                            <p>Compre pelo telefone</p>
+                                            <p>(62)0 0000-0000</p>
+                                        </div>
+                                    </div>
+                                    <div class="container-suporte-email">
+                                        <div class="email-suporte">
+                                            <p>Envie um email</p>
+                                            <p>tallesvinicius.contato@gmail.com</p>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-2">
+                                <svg id="Layer_1" enable-background="new 0 0 35 35" height="25" viewBox="0 0 35 35" width="25" xmlns="http://www.w3.org/2000/svg"><g><path d="m1.9126 24.5c0 .5527.4473 1 1 1h1.9835c.0114 2.2072 1.8087 4 4.0184 4s4.0071-1.7928 4.0184-4h8.9631c.0114 2.2072 1.8087 4 4.0184 4s4.0071-1.7928 4.0184-4h2.1544c.5527 0 1-.4473 1-1v-8.752c0-.7305-.3145-1.4268-.8643-1.9102-2.3638-1.8583-3.0774-3.3378-5.0671-3.3378h-4.2412v-4c0-.5527-.4473-1-1-1h-19c-.5527 0-1 .4473-1 1v12c0 .0142.0074.026.0081.04-.001.0176-.01.0322-.01.0498v5.9102zm7.002 3c-1.1143 0-2.0205-.9063-2.0205-2.0205s.9063-2.0205 2.0205-2.0205 2.0205.9063 2.0205 2.0205-.9063 2.0205-2.0205 2.0205zm17 0c-1.1143 0-2.0205-.9063-2.0205-2.0205s.9063-2.0205 2.0205-2.0205 2.0205.9063 2.0205 2.0205-.9063 2.0205-2.0205 2.0205zm1.2412-15c.8769 0 1.0156.5665 3.7471 2.8398.1172.1035.1846.252.1846.4082v7.752h-1.6065c-.0283 0-.052.0137-.0798.0161-.6907-1.2213-1.9863-2.0571-3.4866-2.0571-1.4963 0-2.7891.8314-3.4813 2.0474-.0112-.0004-.0203-.0064-.0314-.0064h-9.9795c-.0095 0-.0175.0051-.027.0054-.6923-1.2153-1.9849-2.0464-3.4808-2.0464-1.4963 0-2.7891.8314-3.4813 2.0474-.0112-.0004-.0203-.0064-.0314-.0064h-1.4893v-4h18.002c.5527 0 1-.4473 1-1v-6zm-23.2412-5h17v3.9902c0 .0034-.002.0063-.002.0098s.002.0063.002.0098v5.9902h-17z"></path></g></svg>
+                                Rastrear Pedido
+                            </p>
+                            <div class="show show-2 box-nav-bar" style="display: none;">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Rastreio">Rastreamento</a>
+                                @*<input id="input-enter" type="text" placeholder="AA1234567BR" />*@
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-entrar nav-3">
+
+                                <svg class="user-icon" version="1.1" id="Capa_1" height="25" width="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M418.651,431.634c-8.576-56.229-45.769-103.945-98.194-125.989c42.679-35.547,48.457-98.962,12.91-141.641s-98.962-48.457-141.641-12.91s-48.457,98.962-12.91,141.641c3.904,4.69,8.229,9.006,12.91,12.91c-49.783,21.12-86.007,65.344-96.914,118.309c-2.021,9.893,4.37,19.557,14.263,21.577c9.893,2.021,19.557-4.37,21.577-14.263c14.153-69.257,81.774-113.938,151.04-99.785c52.407,10.706,92.626,52.873,100.846,105.728c1.408,8.978,9.198,15.561,18.286,15.451h2.834C413.595,450.981,420.306,441.582,418.651,431.634z M192,228.571c0-35.346,28.654-64,64-64s64,28.654,64,64s-28.654,64-64,64S192,263.918,192,228.571z"></path><path d="M256,512C114.615,512,0,397.385,0,256S114.615,0,256,0s256,114.615,256,256S397.385,512,256,512z M256,36.571c-121.189,0-219.429,98.24-219.429,219.429S134.811,475.429,256,475.429S475.429,377.189,475.429,256S377.189,36.571,256,36.571z"></path><g></g></svg>
+                                Minha conta                              
+                            </p>
+                            <div class="show show-3 box-nav-bar" style="display: none;">
+                                <p>Olá, visitante</p>
+                                <p>Minha conta</p>
+                                <p>Meus pedidos</p>
+                                <a class="nav-link btn-create-account" asp-area="" asp-controller="Usuarios" asp-action="Create">Criar Conta</a>
+                                <p>Cadastre-se agora</p>
+                            </div>    
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <svg version="1.1" class="Capa-1" height="30" width="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve"><g><g><g><path d="M180.213,395.039c-32.248,0-58.48,26.232-58.48,58.48s26.233,58.48,58.48,58.48c32.248,0,58.48-26.239,58.48-58.48C238.693,421.278,212.461,395.039,180.213,395.039z M180.213,476.201c-12.502,0-22.676-10.168-22.676-22.676s10.174-22.676,22.676-22.676c12.508,0,22.676,10.168,22.676,22.676S192.721,476.201,180.213,476.201z"></path><path d="M392.657,395.039c-32.254,0-58.486,26.233-58.486,58.48c0,32.248,26.233,58.48,58.486,58.48c32.242,0,58.48-26.233,58.48-58.48S424.899,395.039,392.657,395.039z M392.657,476.195c-12.508,0-22.682-10.174-22.682-22.676s10.174-22.67,22.682-22.67c12.502,0,22.676,10.162,22.676,22.67C415.333,466.027,405.165,476.195,392.657,476.195z"></path><path d="M154.553,377.143h278.676c9.894,0,17.902-8.014,17.902-17.902c0-9.888-8.014-17.902-17.902-17.902H169.776L118.522,26.96c-1.229-7.531-7.089-13.45-14.602-14.757L35.295,0.268c-9.769-1.695-19.012,4.828-20.707,14.566c-1.701,9.745,4.828,19.012,14.566,20.707l56.075,9.751l51.653,316.825C138.298,370.788,145.775,377.143,154.553,377.143z"></path></g></g></g><g><g><path d="M494.24,115.969c-3.372-4.625-8.742-7.358-14.465-7.358H115.765v35.804h339.454l-36.825,114.573H141.425v35.804h290.02c7.769,0,14.662-5.025,17.043-12.424l48.336-150.378C498.572,126.543,497.611,120.588,494.24,115.969z"></path></g></g></svg>
+                </div>
+            </div>
+        </nav>
+            <div class="categorias-produtos">
+                <p class="categoria-lancamento-icon-1">Lançamentos</p>
+                <div class="lancamento" style="display: none;">
+                    <div class="container-lancamento">
+                        <div class="roupas-lancamento">
+                            <h2>Roupas de lançamento</h2>
+                            <p>Camisa social</p>
+                            <p>Moletom</p>
+                            <p>Jaqueta corta-vento</p>
+                            <p>Calça</p>
+                            <p>Regatas</p>
+                            <a href="/">+ Novidades</a> <br />
+                            <a href="/">+ Ofertas</a>
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Calçados</h2>
+                            <p>Botas</p>
+                            <p>Tênis casual</p>
+                            <p>Tênis esportivos</p>
+                            <p>Adidas</p>
+                            <p>Nike</p>
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Acessórios</h2>
+                            <p>Bones</p>
+                            <p>Correntes de prata</p>
+                            <p>Relógios</p>
+                            <p>Mochilas</p>
+                            <p>Óculos de sol</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="categoria-lancamento-icon-2">Masculinos</p>
+                <div class="masculino" style="display: none;">
+                    <div class="container-lancamento">
+                        <div class="roupas-lancamento">
+                            <h2>Roupas Masculinas</h2>
+                            <p>Camisa social</p>
+                            <p>Moletom</p>
+                            <p>Jaqueta corta-vento</p>
+                            <p>Calça</p>
+                            <p>Regatas</p>
+                            <a href="/">+ Novidades</a> <br />
+                            <a href="/">+ Ofertas</a>
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Calçados</h2>
+                            <p>Botas</p>
+                            <p>Tênis casual</p>
+                            <p>Tênis esportivos</p>
+                            <p>Adidas</p>
+                            <p>Nike</p>
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Acessórios</h2>
+                            <p>Bones</p>
+                            <p>Correntes de prata</p>
+                            <p>Relógios</p>
+                            <p>Mochilas</p>
+                            <p>Óculos de sol</p>
+                        </div>
+                    </div>
+
+                </div>
+            
+                <p class="categoria-lancamento-icon-3">Feminino</p>
+                <div class="feminino" style="display: none;">
+                    <div class="container-lancamento">
+                        <div class="roupas-lancamento">
+                            <h2>Roupas Femininas</h2>
+                            <p>Bermudas</p>
+                            <p>Calças</p>
+                            <p>Camisas de Time</p>
+                            <p>Camisetas</p>
+                            <p>Jaquetas e casacos</p>
+                            <p>Plus Size</p>
+                            <p>Regatas</p>
+                            <p>Shorts</p>
+
+                            <a href="/">+ Novidades</a> <br />
+                            <a href="/">+ Ofertas</a>
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Calçados</h2>
+                            <p>Botas</p>
+                            <p>Chinelos e Sandálias</p>
+                            <p>Crocs</p>
+                            <p>Tênis</p>
+                            <p>Tênis de corrida</p>
+
+                            <a href="/">+ Ver tudo de Calçados</a> <br />                           
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Acessórios</h2>
+                            <p>Bolsas</p>
+                            <p>Luvas</p>
+                            <p>Malas</p>
+                            <p>Meias</p>
+                            <p>Mochila</p>
+                            <p>Relogios</p>
+                            <p>Óculos</p>
+
+                            <a href="/">+ Ver tudo de acessórios</a> <br />
+                        </div>
+                    </div>
+
+                </div>
+                <p class="categoria-lancamento-icon-4">Infantil</p>
+                <div class="infantil" style="display: none;">
+                    <div class="container-lancamento">
+                        <div class="roupas-lancamento">
+                            <h2>Roupas Infantis</h2>
+                            <p>Bermudas</p>
+                            <p>Calças</p>
+                            <p>Camisas de Time</p>
+                            <p>Camisetas</p>
+                            <p>Jaquetas e casacos</p>
+                            <p>Regatas</p>
+                            <p>Shorts</p>
+
+                            <a href="/">+ Novidades</a> <br />
+                            <a href="/">+ Ofertas</a>
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Calçados</h2>
+                            <p>Botas</p>
+                            <p>Chinelos e Sandálias</p>
+                            <p>Crocs</p>
+                            <p>Tênis</p>
+                            <p>Tênis</p>
+
+                            <a href="/">+ Ver tudo de Calçados</a> <br />                           
+                        </div>
+                        <div class="roupas-lancamento">
+                            <h2>Acessórios</h2>
+                            <p>Bolsas</p>
+                            <p>Luvas</p>
+                            <p>Malas</p>
+                            <p>Meias</p>
+                            <p>Mochila</p>
+                            <p>Relogios</p>
+                            <p>Óculos</p>
+
+                            <a href="/">+ Ver tudo de acessórios</a> <br />
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <p>Promoção</p>
+                </div>
+            </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+<footer>
+    <div class="newsletter">
+        <div class="container-news">
+            <div class="titulos-news">
+                <h1>Cadastre-se em nossa newsletter</h1>
+                <p>e receba ótimas novidades e promoções</p>
+            </div>
+            <div class="box-news">
+                <input type="text" placeholder="Seu nome" />
+                <input type="email" placeholder="Seu email" />
+                <input type="submit" value="Cadastre-se"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="barra-final">
+        <!--MAIS AJUDA-->
+        <div class="informacao">
+            <div class="sobre-nos">
+                <h2>Sobre nós</h2>
+                
+                <a href="#">Quem Somos</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Trabalhe Conosco</a>
+                <a href="#">Anuncie Conosco</a>
+                <a href="#">Seja Parceiro</a>
+                <a href="#">Segurança</a>
+            </div>
+            <div class="mais-ajuda">
+                <h2>Mais ajudas</h2>
+                
+                <a href="#">Dúvidas Frequentes</a>
+                <a href="#">Como Comprar</a>
+                <a href="#">Tempo de Garantia</a>
+                <a href="#">Central de Relacionamento</a>
+                <a href="#">Formas de entregas</a>
+            </div>
+            <div class="atendimento">
+                <h2>Atendimento</h2>
+                
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#F25C05"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 17.47c-.88-.07-1.75-.22-2.6-.45l-1.19 1.19c1.2.41 2.48.67 3.8.75v-1.49zM6.54 5h-1.5c.09 1.32.35 2.59.75 3.8l1.2-1.2c-.24-.84-.39-1.71-.45-2.6z" opacity=".3"/><path d="M20 21c.55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17zm-3.6-3.98c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19zM5.03 5h1.5c.07.89.22 1.76.46 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79z"/></svg>
+                    (00) 00000-0000
+                </p>
+    
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#F25C05"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 8l-8 5-8-5v10h16zm0-2H4l8 4.99z" opacity=".3"/><path d="M4 20h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2zM20 6l-8 4.99L4 6h16zM4 8l8 5 8-5v10H4V8z"/></svg>
+                    xxxxxx@gmail.com
+                </p>
+
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#F25C05"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.25 12.15L11 13V7h1.5v5.25l4.5 2.67-.75 1.23z" opacity=".3"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    Atendimento de segunda a sexta <br> das 9:00 as 17:00 (exceto feriados)
+                </p>
+            </div>
+        </div>
+
+        <div class="informacao-2">
+            <div class="pagamento">
+                <h2>Formas de pagamentos</h2>
+                
+                <div class="cartoes-icons">
+                    <a href="#"><img src="~/img/cartao/boleto.png" /></a>
+                    <a href="#"><img src="~/img/cartao/bradesco.jpg" /></a>
+                    <a href="#"><img src="~/img/cartao/caixa.jpg" /></a>
+                    <a href="#"><img src="~/img/cartao/itau.png" /></a>
+                    <a href="#"><img src="~/img/cartao/master.png" /></a>
+                    <a href="#"><img src="~/img/cartao/visa.png" /></a>
+                </div>
+            </div>
+            <div class="rodape-cop">
+                <h6>Site fictício para fins educativos!</h6>
+                <p>Copyright © 2022 TM Code - Todos os direitos reservados.</p>  
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @*<script src="~/js/rastreio_api.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

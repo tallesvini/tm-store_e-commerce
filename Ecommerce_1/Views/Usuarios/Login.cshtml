@@ -1,7 +1,7 @@
 ﻿@model Ecommerce_1.Models.Usuario
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Entre na sua conta";
 }
 
 <!DOCTYPE html>
@@ -14,10 +14,32 @@
 
     <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
 
+    <style>
+        .alerta-erro {
+            z-index: -10;
+            margin-top: 180px;
+        }
+
+        .box-manter-logado {
+            margin-bottom: 7px;
+        }
+
+        .ManterLogado {
+            color: var(--color-font-principal);
+            font-size: 15px;
+        }
+
+    </style>
 </head>
 <body>
 
 <div>
+@if (ViewBag.ErrorUser != null)
+{
+    <div class="alert alert-danger alerta-erro" role="alert">
+        Usuário/Senha incorreta! Verifique os dados digitados!
+    </div>
+}
         <div class="container-login">
             <div class="box-geral-login">
                 <h1>Cliente TM</h1>
@@ -45,7 +67,13 @@
                                         </div>                                                                     
                                     </div>
                                 </div>
+                            </div> 
+                            <div class="box-manter-logado">
+                                 <input type="checkbox" name="manterLogado" value="true" />
+                                 <input name="manterLogado" id="manterLogado" value="false" type="hidden" />
+                                 <label for="manterLogado" class="ManterLogado">Manter Logado?</label>
                             </div>
+
                             <div class="form-group container-entrar-login">
                                 <input type="submit" value="Entrar" class="btn-entrar" />
                             </div>
@@ -62,10 +90,24 @@
     </div>
 </div>
 
+
+
+
     <script src="~/js/login.js"></script>
 </body>
 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            swal("Hehe!", "Usuário logado com sucesso!", "success");
+        }
+    </script>
 }

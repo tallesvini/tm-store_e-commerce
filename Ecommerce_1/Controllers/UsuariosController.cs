@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Ecommerce_1.Data;
 using Ecommerce_1.Models;
 using System.Security.Cryptography;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Ecommerce_1.Controllers
 {
@@ -24,9 +26,18 @@ namespace Ecommerce_1.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return _context.Usuario != null ? 
+
+            if(User.Identity.IsAuthenticated)
+            {
+                return _context.Usuario != null ?
                           View(await _context.Usuario.ToListAsync()) :
                           Problem("Entity set 'Contexto.Usuario'  is null.");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }            
+
         }
 
         // GET: Usuarios/Details/5
@@ -54,10 +65,6 @@ namespace Ecommerce_1.Controllers
         }
 
         // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Celular,Email, Senha")] Usuario usuario)
@@ -76,23 +83,32 @@ namespace Ecommerce_1.Controllers
             }
             return View(usuario);
         }
-
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Login(String email, String senha)
+        public async Task<IActionResult> LoginAsync(String email, String senha, bool manterLogado)
         {
             var emailAddUser = email;
             var senhaAddUser = senha;
             Hash hash = new Hash(SHA512.Create());
             string senhaCripto = hash.CriptografarSenha(senhaAddUser);
 
+
             try
             {
+                List<Claim> direitoAcessos = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier,emailAddUser.ToString()),
+                    new Claim(ClaimTypes.Name, senhaCripto)
+                };
+
+                var identity = new ClaimsIdentity(direitoAcessos, "Identity.Login");
+                var userPrincipal = new ClaimsPrincipal(new[] { identity });
+
+
                 var userBD = _context.Usuario.FirstOrDefault(m => m.Email == email);
 
                 if(userBD != null)
@@ -101,16 +117,23 @@ namespace Ecommerce_1.Controllers
 
                     if(senhaUsuarioBD == senhaCripto)
                     {
-                        Console.WriteLine("Adicionado!");
+                        await HttpContext.SignInAsync(userPrincipal,
+                            new AuthenticationProperties
+                            {
+                                IsPersistent = manterLogado,
+                                ExpiresUtc = DateTime.Now.AddHours(1)
+                            });
+
+                        ViewBag.Message = string.Format("logado!");
                     }
                     else
                     {
-                        Console.WriteLine("Erro");
+                        ViewBag.ErrorUser = string.Format("Não logado!");
                     }
                 }     
                 else
                 {
-                    Console.WriteLine("Usuário incorreto");
+                    ViewBag.ErrorUser = string.Format("Usuário não encontrado!");
                 }
             }
 
@@ -119,7 +142,15 @@ namespace Ecommerce_1.Controllers
                 throw;
             }
 
-            return RedirectToAction("Index", "Home");
+            return View();
+
+        }
+
+        public void GetUser()
+        {
+            
+
+            var a = HttpContext.User.Identity.Name;
 
         }
 

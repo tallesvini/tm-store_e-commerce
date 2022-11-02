@@ -64,11 +64,11 @@
                                 Minha conta                              
                             </p>
                             <div class="show show-3 box-nav-bar" style="display: none;">
-                                <p>Olá, visitante</p>
-                                <p>Minha conta</p>
-                                <p>Meus pedidos</p>
+                                <p>Olá, Visitante! </p>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="MinhaConta">Minha Conta</a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="MeusPedidos">Meus Pedidos</a>
                                 <a class="nav-link btn-create-account" asp-area="" asp-controller="Usuarios" asp-action="Create">Criar Conta</a>
-                                <p>Cadastre-se agora</p>
+                                <a class="nav-link btn-create-account" asp-area="" asp-controller="Usuarios" asp-action="Login">Login</a>
                             </div>    
                         </li>
                     </ul>

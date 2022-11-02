@@ -11,6 +11,14 @@ builder.Services.AddDbContext<Contexto>
         "Server=localhost;initial catalog=ECOMMERCE_CRUD;Uid=root;Pwd=1234",
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-mysql")));
 
+builder.Services.AddAuthentication("Identity.Login").AddCookie("Identity.Login", config =>
+{
+    config.Cookie.Name = "Identity.Login";
+    config.LoginPath = "/Login";
+    config.AccessDeniedPath = "/Home";
+    config.ExpireTimeSpan = TimeSpan.FromHours(1);
+});
+
 var app = builder.Build();
 
 
@@ -26,6 +34,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

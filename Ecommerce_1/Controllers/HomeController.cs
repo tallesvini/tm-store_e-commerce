@@ -25,7 +25,40 @@ namespace Ecommerce_1.Controllers
 
         public IActionResult Rastreio()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();              
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
+        }
+
+        public IActionResult MinhaConta()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
+        }
+
+        public IActionResult MeusPedidos()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+
+            }
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

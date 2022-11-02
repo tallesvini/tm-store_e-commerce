@@ -22,10 +22,10 @@
 }
 
 .input-login-senha {
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding-left: 10px;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    padding-left: 10px !important;
 }
 
 .input-login-email,
